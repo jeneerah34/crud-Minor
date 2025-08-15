@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CRUD Application</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>CRUD Application</h1>
+
+    <section class="card">
+      <h2>Create / Edit Item</h2>
+      <form id="item-form">
+        <input type="hidden" id="item-id" />
+        <label>Title <input id="title" required minlength="2" /></label>
+        <label>Description <textarea id="description" rows="3"></textarea></label>
+        <label class="checkbox">
+          <input type="checkbox" id="done" /> Mark as done
+        </label>
+        <div class="actions">
+          <button type="submit" id="save-btn">Save</button>
+          <button type="button" id="reset-btn">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="list-header">
+        <h2>Items</h2>
+        <input id="search" placeholder="Search by title..." />
+      </div>
+      <ul id="items"></ul>
+    </section>
+  </main>
+
+  <template id="item-template">
+    <li class="item">
+      <div class="meta">
+        <input type="checkbox" class="toggle" />
+        <div class="text">
+          <div class="title"></div>
+          <div class="desc"></div>
+        </div>
+      </div>
+      <div class="row-actions">
+        <button class="edit">Edit</button>
+        <button class="delete">Delete</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
